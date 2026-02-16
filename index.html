@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <header class="app-header">
+        <h1 class="app-title">Memory Game</h1>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          🌙
+        </button>
+      </header>
+
+      <main class="app-main">
+        <!-- Welcome Screen -->
+        <section class="panel panel-welcome" id="welcomeScreen">
+          <h2>Welcome to the Memory Game!</h2>
+          <p class="panel-text">
+            Flip the tiles and try to find all the matching pairs. You can have at most
+            two tiles flipped at a time. If they match, they stay revealed; if not,
+            they'll flip back after a short delay.
+          </p>
+          <ul class="panel-list">
+            <li>Match all 8 pairs to win.</li>
+            <li>The timer starts on your first flip.</li>
+            <li>Try to finish in as few moves as possible!</li>
+          </ul>
+          <button id="startButton" class="primary-button">Start Game</button>
+        </section>
+
+        <!-- Game Screen -->
+        <section class="panel panel-game hidden" id="gameScreen" aria-live="polite">
+          <div class="status-bar">
+            <div class="status-item">
+              <span class="status-label">Time</span>
+              <span class="status-value" id="timeDisplay">00:00</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Moves</span>
+              <span class="status-value" id="movesDisplay">0</span>
+            </div>
+            <button id="restartButton" class="secondary-button small">
+              Restart
+            </button>
+          </div>
+
+          <div class="grid-wrapper">
+            <div class="grid" id="gameGrid" aria-label="Memory tiles"></div>
+          </div>
+        </section>
+
+        <!-- Win Overlay -->
+        <section class="overlay hidden" id="winOverlay" role="dialog" aria-modal="true">
+          <div class="overlay-content">
+            <h2>You did it! 🎉</h2>
+            <p class="overlay-text">
+              You've matched all the pairs.
+            </p>
+            <p class="overlay-stats">
+              <span>Time: <strong id="finalTime">00:00</strong></span>
+              <span>Moves: <strong id="finalMoves">0</strong></span>
+            </p>
+            <div class="overlay-actions">
+              <button id="playAgainButton" class="primary-button">Play Again</button>
+              <button id="backToWelcomeButton" class="secondary-button">
+                Back to Welcome
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <span class="footer-text">
+          Built with HTML, CSS &amp; JavaScript
+        </span>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

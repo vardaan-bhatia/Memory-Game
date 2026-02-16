@@ -1,0 +1,9 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "A responsive browser-based memory game built with vanilla HTML, CSS and JavaScript.",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
+
